@@ -1,16 +1,11 @@
-
 use 5;
+
+package DateTime::Format::RFC3339;
 
 use strict;
 use warnings;
 
-
-package DateTime::Format::RFC3339;
-
-
-BEGIN {
-   use version; our $VERSION = qv('1.0.1');
-}
+use version; our $VERSION = qv('v1.0.2');
 
 
 use Carp     qw( croak );
@@ -51,7 +46,7 @@ sub parse_datetime {
    my ($h,$m,$s) = $str =~ s/^(\d{2}):(\d{2}):(\d{2})// && (0+$1,0+$2,0+$3)
        or croak("Incorrectly formatted time");
 
-   my $ns = $str =~ s/^\.(\d{1,9})\d*// ? 0+substr("$1000000000",0,9) : 0;
+   my $ns = $str =~ s/^\.(\d{1,9})\d*// ? 0+substr($1.('0'x8),0,9) : 0;
 
    my $tz;
    if    ( $str =~ s/^Z//                     ) { $tz = 'UTC';    }
@@ -101,7 +96,7 @@ DateTime::Format::RFC3339 - Parse and format RFC3339 datetime strings
 
 =head1 VERSION
 
-Version 1.0.1
+Version 1.0.2
 
 
 =head1 SYNOPSIS
@@ -154,7 +149,8 @@ For simplicity, the datetime will be converted to UTC first.
 
 =item * L<DateTime::Format::ISO8601>
 
-=item * L<http://tools.ietf.org/html/rfc3339>, "Date and Time on the Internet: Timestamps"
+=item * L<http://tools.ietf.org/html/rfc3339>, "Date and Time on the Internet: Timestamps"
+
 
 =back
 

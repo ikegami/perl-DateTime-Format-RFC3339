@@ -1,5 +1,8 @@
 Revision history for DateTime-Format-RFC3339
 
+1.0.2   2009/10/13
+        Fixed handling of fractional seconds.
+
 1.0.1   2009/01/07
         Documentation formatting fixes.
 
