@@ -1,12 +1,10 @@
-use 5;
 
 package DateTime::Format::RFC3339;
 
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.2');
-
+use version; our $VERSION = qv('v1.0.3');
 
 use Carp     qw( croak );
 use DateTime qw( );
@@ -72,15 +70,25 @@ sub parse_datetime {
 sub format_datetime {
    my ($self, $dt) = @_;
 
-   $dt = $dt->clone()->set_time_zone('UTC')
-      if !$dt->time_zone()->is_utc();
-   
-   return $dt->strftime(
-      ($dt->nanosecond()
-         ? '%Y-%m-%dT%H:%M:%S.%9NZ'
-         : '%Y-%m-%dT%H:%M:%SZ'
-      )
-   )
+   my $tz;
+   if ($dt->time_zone()->is_utc()) {
+      $tz = 'Z';
+   } else {
+      my $secs  = $dt->offset();
+      my $sign = $secs < 0 ? '-' : '+';  $secs = abs($secs);
+      my $mins  = int($secs / 60);       $secs %= 60;
+      my $hours = int($mins / 60);       $mins %= 60;
+      ++$mins if $secs >= 30;
+      $tz = sprintf('%s%02d:%02d', $sign, $hours, $mins);
+   }
+
+   return
+      $dt->strftime(
+         ($dt->nanosecond()
+            ? '%Y-%m-%dT%H:%M:%S.%9N'
+            : '%Y-%m-%dT%H:%M:%S'
+         )
+      ).$tz;
 }
 
 
@@ -96,7 +104,7 @@ DateTime::Format::RFC3339 - Parse and format RFC3339 datetime strings
 
 =head1 VERSION
 
-Version 1.0.2
+Version 1.0.3
 
 
 =head1 SYNOPSIS
@@ -137,8 +145,6 @@ For a more flexible parser, see L<DateTime::Format::ISO8601>.
 Given a L<DateTime> object, this methods returns a RFC3339 datetime
 string.
 
-For simplicity, the datetime will be converted to UTC first.
-
 =back
 
 =head1 SEE ALSO
@@ -153,11 +159,6 @@ For simplicity, the datetime will be converted to UTC first.
 
 
 =back
-
-
-=head1 AUTHOR
-
-Eric Brine, C<< <ikegami@adaelis.com> >>
 
 
 =head1 BUGS
