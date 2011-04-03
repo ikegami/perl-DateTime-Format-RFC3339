@@ -1,5 +1,8 @@
 Revision history for DateTime-Format-RFC3339
 
+1.0.5   2011/03/28
+        Specified license more explicitly.
+
 1.0.4   2010-10-10
         Switch to UTC rather than rounding when dealing with timezone offsets of non-integral minutes.
 
