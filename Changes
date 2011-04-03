@@ -1,13 +1,16 @@
 Revision history for DateTime-Format-RFC3339
 
-1.0.3   2010/10/07
+1.0.4   2010-10-10
+        Switch to UTC rather than rounding when dealing with timezone offsets of non-integral minutes.
+
+1.0.3   2010-10-07
         Leave timezone unchanged when formatting.
 
-1.0.2   2009/10/13
+1.0.2   2009-10-13
         Fixed handling of fractional seconds.
 
-1.0.1   2009/01/07
+1.0.1   2009-01-07
         Documentation formatting fixes.
 
-1.0.0   2009/01/05
+1.0.0   2009-01-05
         Initial version

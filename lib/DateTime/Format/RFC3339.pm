@@ -4,7 +4,7 @@ package DateTime::Format::RFC3339;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.3');
+use version; our $VERSION = qv('v1.0.4');
 
 use Carp     qw( croak );
 use DateTime qw( );
@@ -78,8 +78,13 @@ sub format_datetime {
       my $sign = $secs < 0 ? '-' : '+';  $secs = abs($secs);
       my $mins  = int($secs / 60);       $secs %= 60;
       my $hours = int($mins / 60);       $mins %= 60;
-      ++$mins if $secs >= 30;
-      $tz = sprintf('%s%02d:%02d', $sign, $hours, $mins);
+      if ($secs) {
+         ( $dt = $dt->clone() )
+            ->set_time_zone('UTC');
+         $tz = 'Z';
+      } else {
+         $tz = sprintf('%s%02d:%02d', $sign, $hours, $mins);
+      }
    }
 
    return
@@ -104,7 +109,7 @@ DateTime::Format::RFC3339 - Parse and format RFC3339 datetime strings
 
 =head1 VERSION
 
-Version 1.0.3
+Version 1.0.4
 
 
 =head1 SYNOPSIS
