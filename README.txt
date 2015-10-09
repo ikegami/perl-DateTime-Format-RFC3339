@@ -8,8 +8,8 @@ INSTALLATION
 To install this module, run the following commands:
 
     perl Makefile.PL
-    make 
-    make test 
+    make
+    make test
     make install
 
 DEPENDENCIES
@@ -17,8 +17,10 @@ DEPENDENCIES
 This module requires these other modules and libraries:
 
     DateTime
-    Test::More 
+    Test::More
+    strict
     version
+    warnings
 
 SUPPORT AND DOCUMENTATION
 

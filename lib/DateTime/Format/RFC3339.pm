@@ -4,7 +4,7 @@ package DateTime::Format::RFC3339;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.0.5');
+use version; our $VERSION = qv('v1.2.0');
 
 use Carp     qw( croak );
 use DateTime qw( );
@@ -34,7 +34,7 @@ sub parse_datetime {
 
    $str = uc($str)
       if !$self->[IDX_UC_ONLY];
-   
+
    my ($Y,$M,$D) = $str =~ s/^(\d{4})-(\d{2})-(\d{2})// && (0+$1,0+$2,0+$3)
        or croak("Incorrectly formatted date");
 
@@ -109,7 +109,7 @@ DateTime::Format::RFC3339 - Parse and format RFC3339 datetime strings
 
 =head1 VERSION
 
-Version 1.0.5
+Version 1.2.0
 
 
 =head1 SYNOPSIS
@@ -128,7 +128,7 @@ Version 1.0.5
 This module understands the RFC3339 date/time format, an ISO 8601 profile,
 defined at L<http://tools.ietf.org/html/rfc3339>.
 
-It can be used to parse these formats in order to create the appropriate 
+It can be used to parse these formats in order to create the appropriate
 objects.
 
 
@@ -168,7 +168,7 @@ string.
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-datetime-format-rfc3339 at rt.cpan.org>,
+Please report any bugs or feature requests to C<bug-Datetime-Format-RFC3339 at rt.cpan.org>,
 or through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DateTime-Format-RFC3339>.
 I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
