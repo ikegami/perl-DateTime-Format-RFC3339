@@ -4,7 +4,7 @@ package DateTime::Format::RFC3339;
 use strict;
 use warnings;
 
-use version; our $VERSION = qv('v1.2.0');
+use version; our $VERSION = qv('v1.3.0');
 
 use Carp     qw( croak );
 use DateTime qw( );
@@ -109,7 +109,7 @@ DateTime::Format::RFC3339 - Parse and format RFC3339 datetime strings
 
 =head1 VERSION
 
-Version 1.2.0
+Version 1.3.0
 
 
 =head1 SYNOPSIS
