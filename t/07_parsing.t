@@ -17,12 +17,16 @@ use DateTime::Format::RFC3339 qw( );
    my @neg_tests = (
    );
 
-   plan tests => @pos_tests + @neg_tests;
-
    for (@pos_tests) {
       my ($str, $expected_dt) = @$_;
       my $actual_dt = eval { DateTime::Format::RFC3339->parse_datetime($str) };
-      ok( defined($actual_dt) && $actual_dt eq $expected_dt, $str );
+      my $e = $@;
+
+      ok( !$e, "$str - No exception" )
+         or diag( $e )
+         or next;
+
+      is( $actual_dt, $expected_dt, $str );
    }
 
    for (@neg_tests) {
@@ -31,4 +35,6 @@ use DateTime::Format::RFC3339 qw( );
       my $actual_e = $@;
       like( $actual_e, $expected_e, $str );
    }
+
+   done_testing();
 }
