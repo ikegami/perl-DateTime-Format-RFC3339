@@ -152,6 +152,7 @@ string.
 
 =back
 
+
 =head1 SEE ALSO
 
 =over 4
@@ -166,38 +167,46 @@ string.
 =back
 
 
-=head1 BUGS
-
-Please report any bugs or feature requests to C<bug-Datetime-Format-RFC3339 at rt.cpan.org>,
-or through the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=DateTime-Format-RFC3339>.
-I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
-
-
-=head1 SUPPORT
+=head1 DOCUMENTATION AND SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
     perldoc DateTime::Format::RFC3339
 
-You can also look for information at:
+You can also find it online at this location:
 
-=over 4
+=over
 
-=item * Search CPAN
+=item * L<https://metacpan.org/dist/Datetime-Format-RFC3339>
 
-L<http://search.cpan.org/dist/DateTime-Format-RFC3339>
+=back
 
-=item * RT: CPAN's request tracker
+If you need help, the following are great resources:
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=DateTime-Format-RFC3339>
+=over
 
-=item * AnnoCPAN: Annotated CPAN documentation
+=item * L<https://stackoverflow.com/|StackOverflow>
 
-L<http://annocpan.org/dist/DateTime-Format-RFC3339>
+=item * L<http://www.perlmonks.org/|PerlMonks>
 
-=item * CPAN Ratings
+=item * You may also contact the author directly.
 
-L<http://cpanratings.perl.org/d/DateTime-Format-RFC3339>
+=back
+
+
+=head1 BUGS
+
+Please report any bugs or feature requests using L<https://github.com/ikegami/perl-Datetime-Format-RFC3339/issues>.
+I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
+
+
+=head1 REPOSITORY
+
+=over
+
+=item * Web: L<https://github.com/ikegami/perl-Datetime-Format-RFC3339>
+
+=item * git: L<https://github.com/ikegami/perl-Datetime-Format-RFC3339.git>
 
 =back
 
