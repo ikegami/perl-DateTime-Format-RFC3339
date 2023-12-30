@@ -45,13 +45,13 @@ sub parse_datetime {
    $str = uc( $str )
       if !$self->[ IDX_UC_ONLY ];
 
-   my ( $Y, $M, $D ) = $str =~ s/^([0-9]{4})-([0-9]{2})-([0-9]{2})// && ( 0+$1, 0+$2, 0+$3 )
+   my ( $Y, $M, $D ) = $str =~ s/^([0-9]{4})-([0-9]{2})-([0-9]{2})// ? ( 0+$1, 0+$2, 0+$3 ) : ()
        or croak( "Incorrectly formatted date" );
 
    $str =~ s/^T//
       or croak( "Incorrectly formatted datetime" );
 
-   my ( $h, $m, $s ) = $str =~ s/^([0-9]{2}):([0-9]{2}):([0-9]{2})// && ( 0+$1, 0+$2, 0+$3 )
+   my ( $h, $m, $s ) = $str =~ s/^([0-9]{2}):([0-9]{2}):([0-9]{2})// ? ( 0+$1, 0+$2, 0+$3 ) : ()
        or croak( "Incorrectly formatted time" );
 
    my $ns = $str =~ s/^\.([0-9]{1,9})[0-9]*// ? 0+substr( $1.( '0' x 8 ), 0, 9 ) : 0;
