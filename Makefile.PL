@@ -43,7 +43,6 @@ WriteMakefile(
          },
          develop => {
             requires => {
-               'FindBin'             => 0,
                'Pod::Coverage'       => 0.18,
                'Test::Pod::Coverage' => 1.08,
             },
@@ -51,7 +50,7 @@ WriteMakefile(
       },
 
       resources => {
-         homepage => 'http://search.cpan.org/dist/DateTime-Format-RFC3339/',
+         homepage => 'https://metacpan.org/dist/DateTime-Format-RFC3339',
          license => [ 'http://creativecommons.org/publicdomain/zero/1.0/' ],
          bugtracker => {
             web => 'https://github.com/ikegami/perl-DateTime-Format-RFC3339/issues',

@@ -266,7 +266,6 @@ string.
 
 =item * L<http://tools.ietf.org/html/rfc3339>, "Date and Time on the Internet: Timestamps"
 
-
 =back
 
 
