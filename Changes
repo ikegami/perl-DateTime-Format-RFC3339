@@ -1,5 +1,8 @@
 Revision history for DateTime-Format-RFC3339
 
+1.6.0   ~~~~-~~-~~
+        - ~~~
+
 1.4.0   2024-01-01
         - Added `decimals` option.
         - Added `sep` and `sep_re` options.
