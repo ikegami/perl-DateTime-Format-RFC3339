@@ -1,7 +1,7 @@
 Revision history for DateTime-Format-RFC3339
 
 1.6.0   ~~~~-~~-~~
-        - ~~~
+        - Fix bug in POD.
 
 1.4.0   2024-01-01
         - Added `decimals` option.

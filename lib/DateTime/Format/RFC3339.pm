@@ -253,8 +253,6 @@ For a more flexible parser, see L<DateTime::Format::ISO8601>.
 Given a L<DateTime> object, this methods returns a RFC3339 datetime
 string.
 
-=back
-
 
 =head1 SEE ALSO
 
