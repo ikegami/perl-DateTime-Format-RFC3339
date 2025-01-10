@@ -1,6 +1,7 @@
 Revision history for DateTime-Format-RFC3339
 
 1.12    ~~~~-~~-~~
+        - Fixed a small markup mistake in the documentation.
         - ~~~
 
 1.10.0  2025-01-05
