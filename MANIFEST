@@ -1,4 +1,3 @@
-.gitignore
 Changes
 lib/DateTime/Format/RFC3339.pm
 LICENSE.txt
